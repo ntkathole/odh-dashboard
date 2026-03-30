@@ -9,15 +9,24 @@ import { useClusterInfo } from '@odh-dashboard/internal/redux/selectors/clusterI
 import { getOpenShiftConsoleAction } from '@odh-dashboard/internal/app/AppLauncher';
 import WhosMyAdministrator from '@odh-dashboard/internal/components/WhosMyAdministrator';
 import { ODH_PRODUCT_NAME } from '@odh-dashboard/ui-core/utilities';
-import { FeatureStoreContext } from '../FeatureStoreContext';
+import useExistingFeatureStores from '../hooks/useExistingFeatureStores';
+import { FEATURE_STORE_UI_LABEL_KEY, FEATURE_STORE_UI_LABEL_VALUE } from '../const';
 
 const FeatureStoreWarningAlert: React.FC = () => {
-  const { enabledCRDCount, loaded } = React.useContext(FeatureStoreContext);
+  const { featureStores, loaded } = useExistingFeatureStores();
   const [isAdmin, isAdminLoaded] = useAccessAllowed(verbModelAccess('create', FeatureStoreModel));
   const { serverURL } = useClusterInfo();
   const osConsoleAction = getOpenShiftConsoleAction(serverURL);
 
-  if (!loaded || enabledCRDCount <= 1 || !isAdminLoaded) {
+  const uiLabeledCount = React.useMemo(
+    () =>
+      featureStores.filter(
+        (fs) => fs.metadata.labels?.[FEATURE_STORE_UI_LABEL_KEY] === FEATURE_STORE_UI_LABEL_VALUE,
+      ).length,
+    [featureStores],
+  );
+
+  if (!loaded || uiLabeledCount <= 1 || !isAdminLoaded) {
     return null;
   }
 
