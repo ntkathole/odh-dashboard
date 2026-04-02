@@ -43,7 +43,7 @@ const FeatureStoreWarningAlert: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
           to={osConsoleAction.href || ''}
-          style={{ textDecoration: 'none' }}
+          className="pf-v6-u-text-decoration-none"
         >
           Go to <b>OpenShift Platform</b> {'   '}
           <ExternalLinkAltIcon />
@@ -69,7 +69,7 @@ const FeatureStoreWarningAlert: React.FC = () => {
       isInline
       title="Missing feature stores detected"
       data-testid="feature-store-warning-alert"
-      style={{ marginBottom: '1rem' }}
+      className="pf-v6-u-mb-md"
     >
       {isAdmin ? adminContent : userContent}
     </Alert>

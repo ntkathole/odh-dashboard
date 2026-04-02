@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   FormGroup,
-  FormSection,
   TextInput,
   Radio,
   FormHelperText,
@@ -9,6 +8,7 @@ import {
   HelperTextItem,
   Stack,
 } from '@patternfly/react-core';
+import FormSection from '@odh-dashboard/internal/components/pf-overrides/FormSection';
 import { FeastPvcConfig, FeastPvcCreate } from '../../../k8sTypes';
 
 enum PvcMode {

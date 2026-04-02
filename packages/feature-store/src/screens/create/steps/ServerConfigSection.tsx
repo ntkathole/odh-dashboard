@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   FormGroup,
-  FormSection,
   TextInput,
   Switch,
   FormHelperText,
@@ -9,6 +8,7 @@ import {
   HelperTextItem,
   ExpandableSection,
 } from '@patternfly/react-core';
+import FormSection from '@odh-dashboard/internal/components/pf-overrides/FormSection';
 import SimpleSelect from '@odh-dashboard/internal/components/SimpleSelect';
 import NumberInputWrapper from '@odh-dashboard/internal/components/NumberInputWrapper';
 import { FeastServerConfigs, FeastWorkerConfigs } from '../../../k8sTypes';

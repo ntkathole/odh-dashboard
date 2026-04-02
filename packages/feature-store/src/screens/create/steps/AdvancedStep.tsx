@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Form,
   FormGroup,
-  FormSection,
   TextInput,
   Radio,
   Switch,
@@ -12,6 +11,7 @@ import {
   ExpandableSection,
   Stack,
 } from '@patternfly/react-core';
+import FormSection from '@odh-dashboard/internal/components/pf-overrides/FormSection';
 import SimpleSelect from '@odh-dashboard/internal/components/SimpleSelect';
 import NumberInputWrapper from '@odh-dashboard/internal/components/NumberInputWrapper';
 import { FeatureStoreFormData, AuthzType, ScalingMode, VALID_CONCURRENCY_POLICIES } from '../types';

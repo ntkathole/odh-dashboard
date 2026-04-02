@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Form,
   FormGroup,
-  FormSection,
   TextInput,
   FormHelperText,
   HelperText,
@@ -10,6 +9,7 @@ import {
   Switch,
   Alert,
 } from '@patternfly/react-core';
+import FormSection from '@odh-dashboard/internal/components/pf-overrides/FormSection';
 import SimpleSelect from '@odh-dashboard/internal/components/SimpleSelect';
 import useAccessibleNamespaces from '../../../hooks/useAccessibleNamespaces';
 import {

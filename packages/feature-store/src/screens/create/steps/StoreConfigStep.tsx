@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Form,
   FormGroup,
-  FormSection,
   TextInput,
   Radio,
   Switch,
@@ -13,6 +12,7 @@ import {
   Content,
   Stack,
 } from '@patternfly/react-core';
+import FormSection from '@odh-dashboard/internal/components/pf-overrides/FormSection';
 import SimpleSelect from '@odh-dashboard/internal/components/SimpleSelect';
 import PvcConfigSection from './PvcConfigSection';
 import ServerConfigSection from './ServerConfigSection';

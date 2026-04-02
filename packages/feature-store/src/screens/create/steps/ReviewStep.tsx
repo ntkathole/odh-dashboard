@@ -7,8 +7,8 @@ import {
   DescriptionListDescription,
   CodeBlock,
   CodeBlockCode,
-  FormSection,
 } from '@patternfly/react-core';
+import FormSection from '@odh-dashboard/internal/components/pf-overrides/FormSection';
 import { FeastServerConfigs, FeastPvcConfig } from '../../../k8sTypes';
 import {
   FeatureStoreFormData,
